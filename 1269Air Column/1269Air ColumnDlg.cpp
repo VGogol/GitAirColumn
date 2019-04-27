@@ -577,7 +577,7 @@ DWORD      Reset(LPVOID  lpparameter)
 				}
 				if (0 == G::MCard.A[AXIS_RIGHT].AS.bORGSnr)
 				{
-					pdlg->MessageBox(L"轴复位超时!", L"警告", MB_ICONERROR);
+					pdlg->MessageBox(L"右端轴复位超时!", L"警告", MB_ICONERROR);
 					Resetstep = 1;
 					break;
 				}
@@ -598,10 +598,12 @@ DWORD      Reset(LPVOID  lpparameter)
 			G::MCard.A[AXIS_RIGHT].AS.bHome = 1;
 			G::bRightRstOK = 1;
 
+			G::MCard.SetDoBit(LEFTRADIOTUBENG, 0);
+			G::MCard.SetDoBit(RIGHTRADIOTUBENG, 0);
+
 			Resetstep = 0;
 			Sleep(10);
 			break;
-
 		}
 		Sleep(10);
 	}
@@ -2021,12 +2023,16 @@ void CMy1269AirColumnDlg::ExitSoft()
 	}
 	if (MessageBox(L"确定退出软件？", L"提示", MB_OKCANCEL | MB_ICONQUESTION) == IDOK)
 	{
+		//释放资源
+		HalconCpp::CloseAllFramegrabbers();
+		ClearAllShapeModels();
 		//HalconCpp::ClearShapeModel(G::modle1);
 		//filerw.release();
 		//Sleep(300);
 		////关闭板卡
 		//G::MCard.CloseMotionCard();
-		//Sleep(100);
+		dmc_board_close();
+		Sleep(100);
 
 		CDialogEx::OnCancel();
 	}
