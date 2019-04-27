@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2013
+VisualStudioVersion = 11.0.40629.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "1269Air Column", "1269Air Column\1269Air Column.vcxproj", "{C68686D1-A25F-4CB9-A535-2DF86566609A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C68686D1-A25F-4CB9-A535-2DF86566609A}.Debug|Win32.ActiveCfg = Debug|Win32
+		{C68686D1-A25F-4CB9-A535-2DF86566609A}.Debug|Win32.Build.0 = Debug|Win32
+		{C68686D1-A25F-4CB9-A535-2DF86566609A}.Release|Win32.ActiveCfg = Release|Win32
+		{C68686D1-A25F-4CB9-A535-2DF86566609A}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
